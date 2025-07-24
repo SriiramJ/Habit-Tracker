@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>FCM Token Test</title>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-messaging-compat.js"></script>
+  </head>
+  <body>
+    <h2>FCM Token Test</h2>
+    <button onclick="getToken()">Get FCM Token</button>
+    <pre id="output"></pre>
+    <script>
+      // Replace with your Firebase config
+      const firebaseConfig = {
+        apiKey: "AIzaSyC5P5iaAIBt9ys6CAAqdSB1SmhzZWia9IU",
+        authDomain: "habittracker-db34c.appspot.com",
+        projectId: "habittracker-db34c",
+        storageBucket: "habittracker-db34c.appspot.com",
+        messagingSenderId: "461228144247",
+        appId: "1:461228144247:web:b6847fb442a28af65af872",
+        measurementId: "G-BTLYG26R43",
+      };
+      firebase.initializeApp(firebaseConfig);
+      const messaging = firebase.messaging();
+
+      async function getToken() {
+        try {
+          const currentToken = await messaging.getToken({
+            vapidKey:
+              "BNcaf8vI0vCJwy5HwhfJh0hfRou3hnNGdPkZQ0DkYUH9yt1ZFvKSyusP_LWbRN0tir3rAFTnGTEtmSMCBZyq1Us",
+          });
+          document.getElementById("output").textContent =
+            currentToken || "No token";
+        } catch (err) {
+          document.getElementById("output").textContent = err.message;
+        }
+      }
+    </script>
+  </body>
+</html>
