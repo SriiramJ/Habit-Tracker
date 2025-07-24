@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Custom global styles */
+body {
+    @apply bg-gray-50 text-gray-900 font-sans
+}
+
+h1,h2,h3,h4,h5,h6{
+    @apply font-bold text-gray-800
+}
+
+a{
+    @apply text-blue-600 hover:underline
+}
+
+input, textarea, select, button{
+    @apply rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+button {
+  @apply px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow p-4 mb-4;
+}
+
+/* Streak icon style */
+.streak-icon {
+  font-size: 2rem;
+  color: #f59e42; /* orange for 🔥 */
+}
+
+/* Notification badge */
+.notification-badge {
+  @apply bg-red-500 text-white rounded-full px-2 py-1 text-xs;
+}
+
+/* Reward badge */
+.reward-badge {
+  @apply bg-yellow-400 text-white rounded-full px-2 py-1 text-xs;
+}
+
+/* Chatbot bubble */
+.chatbot-bubble {
+  @apply bg-blue-100 text-gray-900 rounded-lg p-2 mb-2;
+}
+
+/* Tool section */
+.tool-section {
+  @apply bg-gray-100 rounded-lg p-4 mb-4;
+}
+
+/* Responsive container */
+.container {
+  @apply max-w-4xl mx-auto px-4;
+}
